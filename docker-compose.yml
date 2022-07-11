@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  kasm_web:
+    image: ipvsix/ubuntu-desktop:min01
+    shm_size: '768mb'
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - zerotrust
+    environment:
+      VNC_PW: '${PASSWORD}'
+#    ports:
+#      - ${HOST_PORT}:6901
+    logging:
+      driver: json-file
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+         - node.labels.pop == ${POP}
+      resources:
+        reservations:
+          cpus: '0.2'
+          memory: 256M
+        limits:
+          cpus: '4.0'
+          memory: 4G
+
+networks:
+  zerotrust:
+    external: true
