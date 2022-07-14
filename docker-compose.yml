@@ -25,7 +25,7 @@ services:
           memory: 512M
         limits:
           cpus: '4.0'
-          memory: 4G
+          memory: 8G
 
 networks:
   zerotrust:
