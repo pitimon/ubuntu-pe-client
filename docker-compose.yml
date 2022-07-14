@@ -12,8 +12,8 @@ services:
       VNC_PW: '${PASSWORD}'
 #    ports:
 #      - ${HOST_PORT}:6901
-    logging:
-      driver: json-file
+#    logging:
+#      driver: json-file
     deploy:
       replicas: 1
       placement:
@@ -22,7 +22,7 @@ services:
       resources:
         reservations:
           cpus: '0.2'
-          memory: 256M
+          memory: 512M
         limits:
           cpus: '4.0'
           memory: 4G
