@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   kasm_web:
-    image: ipvsix/ubuntu-desktop:0925
+    image: ipvsix/ubuntu-desktop:230621
     shm_size: '512mb'
     volumes:
       - /etc/timezone:/etc/timezone:ro
